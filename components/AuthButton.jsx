@@ -7,7 +7,7 @@ import { AuthModal } from "./AuthModal";
 import { signOut } from "@/app/actions";
 
 const AuthButton = ({ user }) => {
-  const [showAuthModal, setAuthModal] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   if (user) {
     return (
       <form action={signOut}>
@@ -28,7 +28,7 @@ const AuthButton = ({ user }) => {
   return (
     <>
       <Button
-        onClick={() => setAuthModal(true)}
+        onClick={() => setShowAuthModal(true)}
         variant="default"
         size="sm"
         className="
@@ -40,6 +40,10 @@ const AuthButton = ({ user }) => {
         <LogIn className="w-4 h-4" />
         Sign In
       </Button>
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+      />
     </>
   );
 };
