@@ -109,5 +109,3 @@ export async function POST(request) {
   }
 }
 
-// curl.exe -X POST https://getpriceping.app/api/cron/check-prices 
-// -H "Authorization: Bearer 881292484f79defe4714ccce9c9735ddddde402bc797a8ac8f20d469a95364c5"
