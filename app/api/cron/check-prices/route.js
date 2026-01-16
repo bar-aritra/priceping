@@ -19,7 +19,7 @@ export async function POST(request) {
 
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL,
-      process.env.SUPABASE_SERVICE_ROLE_KEY
+      process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY
     );
 
     const { data: products, error: productsError } = await supabase
@@ -108,3 +108,6 @@ export async function POST(request) {
     );
   }
 }
+
+// curl.exe -X POST https://getpriceping.app/api/cron/check-prices 
+// -H "Authorization: Bearer 881292484f79defe4714ccce9c9735ddddde402bc797a8ac8f20d469a95364c5"
